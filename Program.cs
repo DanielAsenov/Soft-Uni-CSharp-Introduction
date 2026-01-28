@@ -2,16 +2,13 @@
 
 
 
+string password = Console.ReadLine();
 
-int number = int.Parse(Console.ReadLine());
-
-bool numberIsEven = number % 2 == 0;
-
-if (numberIsEven)
+if  (password == "s3cr3t!P@ssw0rd")
 {
-    Console.WriteLine("even");
+    Console.WriteLine("Welcome");
 }
 else
 {
-    Console.WriteLine("odd");
+    Console.WriteLine("Wrong password!");
 }
