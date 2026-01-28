@@ -1,0 +1,11 @@
+﻿
+
+
+
+double currency = double.Parse(Console.ReadLine());
+
+double usd = 1.79549 * currency;
+double bgn = usd;
+
+
+Console.WriteLine(bgn);
