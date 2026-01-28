@@ -1,0 +1,98 @@
+﻿
+
+using System.Data;
+
+string city = Console.ReadLine();
+double volumeSells = double.Parse(Console.ReadLine());
+double commission = 0;
+bool isValid = true;
+
+if (volumeSells < 0)
+{
+    
+    isValid = false;
+}
+
+if (isValid == true)
+{
+    if (city == "Sofia")
+    {
+
+        if (volumeSells > 0 && volumeSells <= 500)
+        {
+            commission = volumeSells * 0.05;
+        }
+        else if (volumeSells <= 1000)
+        {
+            commission = volumeSells * 0.07;
+        }
+        else if (volumeSells <= 10000)
+        {
+            commission = volumeSells * 0.08;
+        }
+        else if (volumeSells > 10000)
+        {
+            commission = volumeSells * 0.12;
+        }
+        
+    }
+    else if (city == "Varna")
+    {
+
+        if (volumeSells > 0 && volumeSells <= 500)
+        {
+            commission = volumeSells * 0.045;
+        }
+        else if (volumeSells <= 1000)
+        {
+            commission = volumeSells * 0.075;
+        }
+        else if (volumeSells <= 10000)
+        {
+            commission = volumeSells * 0.10;
+        }
+        else if (volumeSells > 10000)
+        {
+            commission = volumeSells * 0.13;
+        }
+
+    }
+    else if (city == "Plovdiv")
+    {
+
+        if (volumeSells <= 500)
+        {
+            commission = volumeSells * 0.055;
+        }
+        else if (volumeSells <= 1000)
+        {
+            commission = volumeSells * 0.08;
+        }
+        else if (volumeSells <= 10000)
+        {
+            commission = volumeSells * 0.12;
+        }
+        else if (volumeSells > 10000)
+        {
+            commission = volumeSells * 0.145;
+        }
+
+    }
+    else
+    {
+        Console.WriteLine("error");
+        isValid = false;
+
+    }
+}
+else
+{
+    Console.WriteLine("error");
+    isValid = false;
+}
+
+
+if (isValid == true)
+{
+    Console.WriteLine($"{commission:F2}");
+}
