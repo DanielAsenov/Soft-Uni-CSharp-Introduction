@@ -1,0 +1,51 @@
+﻿
+
+
+double budget = double.Parse(Console.ReadLine());
+string season = Console.ReadLine();
+
+string destination = "";
+string type = "";
+
+double price = 0;
+
+//Bulgaria
+if (budget <= 100)
+{
+    destination = "Bulgaria";
+
+    if (season == "summer")
+    {
+        price = budget - (budget * 0.70);
+        type = "Camp";
+    }
+    else if (season == "winter")
+    {
+        price = budget - (budget * 0.30);
+        type = "Hotel";
+    }
+}
+else if (budget <= 1000)
+{
+    destination = "Balkans";
+
+    if (season == "summer")
+    {
+        price = budget - (budget * 0.60);
+        type = "Camp";
+    }
+    else if (season == "winter")
+    {
+        price = budget - (budget * 0.20);
+        type = "Hotel";
+    }
+}
+else if (budget > 1000)
+{
+    destination = "Europe";
+    price = budget - (budget * 0.90);
+    type = "Hotel";
+}
+
+Console.WriteLine($"Somewhere in {destination}");
+Console.WriteLine($"{type} - {price:F2}");
