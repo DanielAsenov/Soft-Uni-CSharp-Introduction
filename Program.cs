@@ -6,8 +6,13 @@
 
 
 
+int dogFood = int.Parse(Console.ReadLine());
+int catFood  = int.Parse(Console.ReadLine());
 
-string name = Console.ReadLine();
 
+double dogFoodPrice = dogFood * 2.50;
+double catFoodPrice = catFood * 4.00;
 
-Console.WriteLine("Hello, " + name + "!");
+double finalPrice = dogFoodPrice + catFoodPrice;
+
+Console.WriteLine($"{finalPrice} lv.");
