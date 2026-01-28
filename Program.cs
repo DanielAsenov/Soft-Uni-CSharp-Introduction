@@ -1,0 +1,59 @@
+﻿
+
+
+
+int startScore = int.Parse(Console.ReadLine());
+
+double bonusScore = 0;
+
+if (startScore <= 100)
+{
+    bonusScore = 5;
+    if (startScore % 2 == 0)
+    {
+        bonusScore++;
+    }
+    else if (startScore % 5 == 0)
+    {
+        bonusScore++;
+        bonusScore++;
+    }
+ 
+}
+
+
+else if (startScore <= 100 | startScore <= 1000)
+{
+    bonusScore = startScore * 0.2;
+    if (startScore % 2 == 0)
+    {
+        bonusScore++;
+    }
+    else if (startScore % 5 == 0)
+    {
+        bonusScore++;
+        bonusScore++;
+    }
+}
+
+
+
+
+else if (startScore > 1000)
+{
+    bonusScore = startScore * 0.1;
+    if (startScore % 2 == 0)
+    {
+        bonusScore++;
+    }
+    else if (startScore % 5 == 0)
+    {
+        bonusScore++;
+        bonusScore++;
+    }
+
+}
+
+
+Console.WriteLine(bonusScore);
+Console.WriteLine(startScore+bonusScore);
