@@ -1,0 +1,17 @@
+﻿
+
+
+
+
+int number = int.Parse(Console.ReadLine());
+
+bool numberIsEven = number % 2 == 0;
+
+if (numberIsEven)
+{
+    Console.WriteLine("even");
+}
+else
+{
+    Console.WriteLine("odd");
+}
