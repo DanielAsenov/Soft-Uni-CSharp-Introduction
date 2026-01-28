@@ -1,0 +1,19 @@
+﻿
+
+
+double w = double.Parse(Console.ReadLine());
+double h = double.Parse(Console.ReadLine());
+
+
+double corridorW = h * 100 - 100;
+double desks = Math.Floor(corridorW / 70);
+
+
+double length = w * 100;
+double rows = Math.Floor(length / 120);
+
+double space = desks * rows - 3;
+
+
+
+ Console.WriteLine(space);
