@@ -1,0 +1,95 @@
+﻿
+
+
+string typeOfFlower = Console.ReadLine();
+int numberOfFlower = int.Parse(Console.ReadLine());
+int budget = int.Parse(Console.ReadLine());
+
+double flowerPrice = 0;
+double totalPrice = 0;
+
+double rosesPrice = 5 * numberOfFlower;
+double dahliasPrice = 3.80 * numberOfFlower;
+double tulipsPrice = 2.80 * numberOfFlower;
+double narcissusPrice = 3 * numberOfFlower;
+double gladiolusPrice = 2.50 *numberOfFlower;
+
+
+if (typeOfFlower == "Roses")
+{
+    
+
+    if (numberOfFlower > 80)
+    {
+        totalPrice = rosesPrice - (rosesPrice   * 0.10);
+    }
+    else
+    {
+        totalPrice = rosesPrice;
+    }
+
+}
+
+
+if (typeOfFlower == "Dahlias")
+{
+    
+    if (numberOfFlower > 90)
+    {
+        totalPrice = dahliasPrice - (dahliasPrice * 0.15);
+    }
+    else
+    {
+        totalPrice = dahliasPrice;
+    }
+
+}
+
+if (typeOfFlower == "Tulips")
+{
+    if (numberOfFlower > 80)
+    {
+        totalPrice = tulipsPrice - (tulipsPrice * 0.15);
+    }
+    else
+    {
+        totalPrice = tulipsPrice;
+    }
+
+}
+
+if (typeOfFlower == "Narcissus")
+{
+    if (numberOfFlower < 120)
+    {
+        totalPrice = narcissusPrice + (narcissusPrice * 0.15);
+    }
+    else
+    {
+        totalPrice = narcissusPrice;
+    }
+
+}
+
+if (typeOfFlower== "Gladiolus")
+{
+    if (numberOfFlower < 80)
+    {
+        totalPrice = gladiolusPrice + (gladiolusPrice * 0.20);
+    }
+    else
+    {
+        totalPrice = gladiolusPrice;
+    }
+  
+}
+
+if (budget >= totalPrice)
+{
+    Console.WriteLine($"Hey, you have a great garden with {numberOfFlower} {typeOfFlower} and {budget - totalPrice:F2} leva left.");
+}
+else if (budget < totalPrice)
+{
+    Console.WriteLine($"Not enough money, you need {totalPrice - budget:F2} leva more."
+);
+}
