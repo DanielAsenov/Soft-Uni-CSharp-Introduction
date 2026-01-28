@@ -96,3 +96,4 @@ if (isValid == true)
 {
     Console.WriteLine($"{commission:F2}");
 }
+
