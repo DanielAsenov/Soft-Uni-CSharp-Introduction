@@ -1,0 +1,14 @@
+﻿
+
+
+
+
+
+double squareM = double.Parse(Console.ReadLine());
+
+double priceSquareM = squareM * 7.61;
+
+double discount = priceSquareM * 0.18;
+
+Console.WriteLine($"The final price is: {priceSquareM - discount}");
+Console.WriteLine($"The discount is: {discount}" );
