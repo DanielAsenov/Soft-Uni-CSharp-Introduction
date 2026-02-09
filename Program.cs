@@ -1,0 +1,97 @@
+﻿/*
+2
+1.5
+-2.5
+
+ */
+
+int numbers = int.Parse(Console.ReadLine());
+
+
+double oddSumTotal = 0;
+double oddSumMin = double.MaxValue;
+double oddSumMax = double.MinValue;
+
+double evenSumTotal = 0;
+double evenSumMin = double.MaxValue;
+double evenSumMax = double.MinValue;
+
+
+
+for (int i = 1; i <= numbers; i++)
+{
+    double num = double.Parse(Console.ReadLine());
+
+    if (i % 2 == 0)
+    {
+        evenSumTotal += num;
+        if (num > evenSumMax)
+        {
+            evenSumMax = num;
+        }
+
+
+        if (num < evenSumMin)
+        {
+            evenSumMin = num;
+        }
+
+    }
+    else
+    {
+        oddSumTotal += num;
+        if (num > oddSumMax)
+        {
+            oddSumMax = num;
+        }
+
+        if (num < oddSumMin)
+        {
+            oddSumMin = num;
+        }
+    }
+
+}
+
+Console.WriteLine($"OddSum={oddSumTotal:F2},");
+
+
+if (oddSumMin == double.MaxValue)
+{
+    Console.WriteLine("OddMin=No,");
+}
+else
+{
+    Console.WriteLine($"OddMin={oddSumMin:F2},");
+}
+
+
+if (oddSumMax  == double.MinValue)
+{
+    Console.WriteLine("OddMax=No,");
+}
+else
+{
+    Console.WriteLine($"OddMax={oddSumMax:F2},");
+}
+
+Console.WriteLine($"EvenSum={evenSumTotal:F2}");
+
+
+if (evenSumMin == double.MaxValue)
+{
+    Console.WriteLine("EvenMin=No,");
+}
+else
+{
+    Console.WriteLine($"EvenMin={evenSumMin:F2}");
+}
+
+if (evenSumMax == double.MinValue)
+{
+    Console.WriteLine($"EvenMax=No,");
+}
+else
+{
+    Console.WriteLine($"EvenMax={evenSumMax:F2} ");
+}
