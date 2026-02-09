@@ -1,0 +1,75 @@
+﻿/*
+10
+43
+57
+-12
+23
+12
+0
+50
+40
+30
+20
+
+ */
+int numberOfMoves = int.Parse(Console.ReadLine());
+
+
+double invalidNumbersCount = 0;
+double firstNumberCount = 0; // 0 - 9 numbers
+double secondNumberCount = 0; // 10 - 19 numbers
+double thirdNumberCount = 0; // 20-29 numbers
+double fourthNumberCount = 0; // 30-39 numbers
+double fifthNumberCount = 0; // 40-50 numbers
+
+double totalScore = 0;
+
+
+for (int i = 0; i < numberOfMoves; i++)
+{
+    int number = int.Parse(Console.ReadLine());
+
+    if (number > 50)
+    {
+        totalScore = totalScore / 2;
+        invalidNumbersCount++;
+    }
+    else if (number < 0)
+    {
+        totalScore = totalScore / 2;
+        invalidNumbersCount++;
+    }
+    else if (number <= 9)
+    {
+        totalScore += number * 0.20;
+        firstNumberCount++;
+    }
+    else if (number >= 10 && number <= 19)
+    {
+        totalScore += number * 0.30;
+        secondNumberCount++;
+    }
+    else if (number >= 20 && number <= 29)
+    {
+        totalScore += number * 0.40;
+        thirdNumberCount++;
+    }
+    else if (number >= 30 && number <= 39)
+    {
+        totalScore += 50;
+        fourthNumberCount++;
+    }
+    else if (number >= 40 && number <= 50)
+    {
+        totalScore += 100;
+        fifthNumberCount++;
+    }
+}
+
+Console.WriteLine(totalScore);
+Console.WriteLine($"From 0 to 9: {firstNumberCount / numberOfMoves * 100:F2}%");
+Console.WriteLine($"From 10 to 19: {secondNumberCount / numberOfMoves * 100:F2}%");
+Console.WriteLine($"From 20 to 29: {thirdNumberCount / numberOfMoves * 100:F2}%");
+Console.WriteLine($"From 30 to 39: {fourthNumberCount / numberOfMoves * 100:F2}%");
+Console.WriteLine($"From 40 to 50: {fifthNumberCount / numberOfMoves * 100:F2}%");
+Console.WriteLine($"Invalid numbers: {invalidNumbersCount / numberOfMoves * 100:F2}%");
