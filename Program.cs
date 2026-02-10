@@ -1,0 +1,63 @@
+﻿/*
+250
+150
+spend
+50
+spend
+50
+save
+100
+save
+100
+ */
+
+double vacationMoneyNeeded = double.Parse(Console.ReadLine());
+double startMoney = double.Parse(Console.ReadLine());
+
+double dayCount = 0;
+double spendCount = 0;
+
+
+while (startMoney < vacationMoneyNeeded && spendCount < 5)
+{
+    string action = Console.ReadLine();
+    
+
+    if (action == "spend")
+    {
+        double sumOfAction = double.Parse(Console.ReadLine());
+
+        startMoney -= sumOfAction;
+        spendCount++;
+        dayCount++;
+
+ 
+
+        if (startMoney <= 0)
+        {
+            startMoney = 0;
+        }
+
+    }
+
+    if (action == "save")
+    {
+        double sumOfAction = double.Parse(Console.ReadLine());
+
+        startMoney += sumOfAction;
+        spendCount = 0;
+        dayCount++;
+    }
+}
+if (startMoney >= vacationMoneyNeeded)
+{
+    Console.WriteLine($"You saved the money for {dayCount} days.");
+
+}
+
+if (spendCount == 5)
+{
+    Console.WriteLine("You can't save the money.");
+    Console.WriteLine($"{dayCount}");
+
+}
