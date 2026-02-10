@@ -1,0 +1,22 @@
+﻿
+
+
+string favoriteBook = Console.ReadLine();
+
+string bookInput = Console.ReadLine();
+
+int booksChecked = 0;
+
+while (bookInput != favoriteBook)
+{
+    if (bookInput == "No More Books")
+    {
+        Console.WriteLine("The book you search is not here!");
+        Console.WriteLine($"You checked {booksChecked} books.");
+    }
+    booksChecked++;
+
+    bookInput = Console.ReadLine();
+}
+
+Console.WriteLine($"You checked {booksChecked} and found it.");
