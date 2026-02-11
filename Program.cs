@@ -1,0 +1,46 @@
+﻿
+
+int changeAmount = (int)(double.Parse(Console.ReadLine()) * 100);
+
+int biggestCoin = 200;
+int coinCount = 0;
+
+while (changeAmount > 0)
+{
+    
+    if (changeAmount >= biggestCoin)
+    {
+        changeAmount-=biggestCoin;
+        coinCount++;
+    }
+    else if (biggestCoin == 200)
+    {
+        biggestCoin = 100;
+    }
+    else if (biggestCoin == 100)
+    {
+        biggestCoin = 50;
+    }
+    else if (biggestCoin == 50)
+    {
+        biggestCoin = 20;
+    }
+    else if (biggestCoin == 20)
+    {
+        biggestCoin = 10;
+    }
+    else if (biggestCoin == 10)
+    {
+        biggestCoin = 5;
+    }
+    else if (biggestCoin == 5)
+    {
+        biggestCoin = 2;
+    }
+    else
+    {
+        biggestCoin = 1;
+    }
+
+}
+Console.WriteLine(coinCount);
