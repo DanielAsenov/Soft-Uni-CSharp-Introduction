@@ -1,0 +1,42 @@
+﻿/*
+10
+10
+2
+20
+20
+20
+20
+122
+
+10
+1
+2
+4
+6
+Done
+ */
+int width = int.Parse(Console.ReadLine());
+int length  = int.Parse(Console.ReadLine());
+int height  = int.Parse(Console.ReadLine());
+
+int freeSpace = width * length * height;
+
+string input = "";
+
+while ((input = Console.ReadLine()) != "Done" && freeSpace > 0)
+{
+    int boxes = int.Parse(input);
+
+    freeSpace -= boxes;
+    
+
+}
+
+if (input == "Done")
+{
+    Console.WriteLine($"{freeSpace} Cubic meters left.");
+}
+else
+{
+    Console.WriteLine($"No more free space! You need {Math.Abs(freeSpace)} Cubic meters more.");
+}
