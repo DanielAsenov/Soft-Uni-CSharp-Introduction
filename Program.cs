@@ -1,0 +1,47 @@
+﻿/*
+10
+10
+20
+20
+20
+20
+21
+
+10
+2
+2
+4
+6
+STOP
+ */
+
+int length = int.Parse(Console.ReadLine());
+int width  = int.Parse(Console.ReadLine());
+
+int cakeArea = length * width;
+int pieceCount = 0;
+
+string input = "";
+
+while ((input = Console.ReadLine()) != "STOP" && cakeArea > 0)
+{
+
+    
+    int cakePerGuest = int.Parse(input);
+
+    pieceCount++;
+    cakeArea -= cakePerGuest;
+
+    
+
+
+}
+
+if (cakeArea > 0)
+{
+    Console.WriteLine($"{cakeArea} pieces are left.");
+}
+else
+{
+    Console.WriteLine($"No more cake left! You need {Math.Abs(cakeArea)} pieces more.");
+}
