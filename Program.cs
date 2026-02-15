@@ -1,0 +1,136 @@
+﻿/*
+H
+n
+e
+l
+l
+o
+o
+c
+t
+c
+h
+o
+e
+r
+e
+n
+e
+End
+
+
+o
+S
+%
+o
+l
+^
+v
+e
+c
+n
+&
+m
+e
+c
+o
+n
+End
+
+
+%
+!
+c
+^
+B
+`
+o
+%
+o
+o
+M
+)
+{
+n
+\
+A
+D
+End
+
+ */
+
+
+string letter = "";
+string missingWord = "";
+string complete = "";
+
+
+bool cFound = false;
+bool oFound = false;
+bool nFound = false;
+
+
+while (true)
+{
+    letter = Console.ReadLine();
+
+    if (cFound == true && oFound == true && nFound == true)
+    {
+
+        complete += missingWord + " ";
+        missingWord = "";
+        cFound = false;
+        oFound = false;
+        nFound = false;
+
+    }
+
+    if (letter == "End")
+    {
+        break;
+    }
+
+    if (!char.IsLetter(letter[0]))
+    {
+        continue;
+    }
+
+   
+
+
+    if (letter == "c" && cFound == false)
+    {
+        cFound = true;
+        continue;
+    }
+    else if (letter == "o" && oFound == false)
+    {
+        oFound = true;
+        continue;
+    }
+    else if (letter == "n" && nFound == false)
+    {
+        nFound = true;
+        continue;
+    }
+
+
+    
+
+
+
+
+    missingWord += letter;
+
+}
+
+Console.Write(complete + " ");
+
+
+/*
+ if (cFound == true || oFound == true || nFound == true)
+    {
+        missingWord += letter;
+        continue;
+    }
+ */
