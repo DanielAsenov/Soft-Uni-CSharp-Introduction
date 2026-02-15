@@ -1,0 +1,13 @@
+﻿
+
+int number = int.Parse(Console.ReadLine());
+
+double total = 0;
+
+for  (int i = 0; i < number; i++)
+{
+    int sum = int.Parse(Console.ReadLine());
+    total += sum;
+}
+
+Console.WriteLine($"{total/number:F2}");
