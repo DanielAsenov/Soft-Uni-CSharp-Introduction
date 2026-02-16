@@ -1,0 +1,78 @@
+﻿/*
+Greece
+1000
+200
+200
+300
+100
+150
+240
+Spain
+1200
+300
+500
+193
+423
+End
+
+Greece
+500
+49.99
+5000
+Spain
+4000
+
+ */
+
+string destination;
+string money;
+string requiredMoney;
+double moneySaved = 0;
+double savings = 0;
+double sum = 0;
+
+while ((destination = Console.ReadLine()) != "End")
+{
+    requiredMoney = Console.ReadLine();
+    if (!double.TryParse(requiredMoney, out sum))
+    {
+        break;
+    }
+    
+    savings = 0;
+
+    while (savings < sum)
+    {
+        money = Console.ReadLine();
+
+        if (double.TryParse(money, out moneySaved))
+        {
+            savings += moneySaved;
+        }
+        else
+        {
+            continue;
+        }
+
+    }
+    Console.WriteLine($"Going to {destination}!");
+
+}
+
+/*
+ 
+ string destination;
+string money;
+int sumMoney = 0;
+int savings = 0;
+bool countryVisited = false;
+
+while ((destination = Console.ReadLine()) != "End")
+{
+    money = Console.ReadLine();
+    if (!int.TryParse(money, out sumMoney))
+    {
+        break;
+    }
+}
+ */
