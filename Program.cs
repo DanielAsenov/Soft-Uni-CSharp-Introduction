@@ -1,0 +1,34 @@
+﻿/*
+123456
+124000
+ */
+
+int lowerNumber = int.Parse(Console.ReadLine());
+int higherNumber = int.Parse(Console.ReadLine());
+
+
+for (int i = lowerNumber; i <= higherNumber; i++)
+{
+    string currentNumber = i.ToString();
+    int oddCount = 0;
+    int evenCount = 0;
+    for (int j = 0; j < currentNumber.Length; j++)
+    {
+        int currentDigit = int.Parse(currentNumber[j].ToString());
+        if (j % 2 == 0)
+        {
+            evenCount += currentDigit;
+        }
+        else
+        {
+            oddCount += currentDigit;
+        }
+    }
+
+    if (evenCount == oddCount)
+    {
+        Console.Write(i + " ");
+    }
+
+
+}
