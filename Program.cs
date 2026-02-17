@@ -1,0 +1,26 @@
+﻿
+
+int number = int.Parse(Console.ReadLine());
+
+bool flag = false;
+int currentNumber = 1;
+
+for (int row = 1; row <= number; row++)
+{
+    for (int col = 1; col <= row; col++)
+    {
+        if (currentNumber > number)
+        {
+            flag = true;
+            break;
+        }
+        Console.Write(currentNumber + " ");
+        currentNumber++;
+    }
+
+    if (flag)
+    {
+        break;
+    }
+    Console.WriteLine();
+}
