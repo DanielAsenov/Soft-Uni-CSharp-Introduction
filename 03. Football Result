@@ -1,0 +1,74 @@
+﻿
+
+
+string firstMatch = Console.ReadLine();
+string secondMatch = Console.ReadLine();
+string thirdMatch = Console.ReadLine();
+
+int myTeamWon = 0;
+int myTeamLost = 0;
+int myTeamDrawn = 0;
+
+string[] firstMatchResult = firstMatch.Split(':');
+int myGoals = int.Parse(firstMatchResult[0]);
+int enemyGoals = int.Parse(firstMatchResult[1]);
+
+string[] secondMatchReuslt = secondMatch.Split(':');
+int myGoals2 = int.Parse(secondMatchReuslt[0]);
+int enemyGoals2 = int.Parse(secondMatchReuslt[1]);
+
+string[] thirdMatchReuslt = thirdMatch.Split(':');
+int myGoals3 = int.Parse(thirdMatchReuslt[0]);
+int enemyGoals3 = int.Parse(thirdMatchReuslt[1]);
+
+if (myGoals > enemyGoals)
+{
+    myTeamWon += 1;
+}
+else if (myGoals < enemyGoals)
+{
+    myTeamLost += 1;
+}
+else if (myGoals == enemyGoals)
+{
+    myTeamDrawn += 1;
+}
+
+
+
+if (myGoals2 > enemyGoals2)
+{
+    myTeamWon += 1;
+}
+else if (myGoals2 < enemyGoals2)
+{
+    myTeamLost += 1;
+}
+else if (myGoals2 == enemyGoals2)
+{
+    myTeamDrawn += 1;
+}
+
+
+
+if (myGoals3 > enemyGoals3)
+{
+    myTeamWon += 1;
+}
+else if (myGoals3 < enemyGoals3)
+{
+    myTeamLost += 1;
+}
+else if (myGoals3 == enemyGoals3)
+{
+    myTeamDrawn += 1;
+}
+
+
+
+
+
+
+Console.WriteLine($"Team won {myTeamWon} games.");
+Console.WriteLine($"Team lost {myTeamLost} games.");
+Console.WriteLine($"Drawn games: {myTeamDrawn}");

@@ -1,0 +1,66 @@
+﻿
+
+
+
+string country = Console.ReadLine();
+string equipment = Console.ReadLine();
+
+
+
+double totalScore = 0;
+double totalScoreNeeded = 0;
+
+if (country == "Russia")
+{
+    if (equipment == "ribbon")
+    {
+        totalScore = 9.100 + 9.400;
+    }
+    if (equipment == "hoop")
+    {
+        totalScore = 9.300 + 9.800;
+    }
+    else if (equipment == "rope")
+    {
+        totalScore = 9.600 + 9.000;
+    }
+
+}
+
+if (country == "Bulgaria")
+{
+    if (equipment == "ribbon")
+    {
+        totalScore = 9.600 + 9.400;
+    }
+    if (equipment == "hoop")
+    {
+        totalScore = 9.550 + 9.750;
+    }
+    else if (equipment == "rope")
+    {
+        totalScore = 9.500 + 9.400;
+    }
+}
+
+if (country == "Italy")
+{
+    if (equipment == "ribbon")
+    {
+        totalScore = 9.200 + 9.500;
+    }
+    if (equipment == "hoop")
+    {
+        totalScore = 9.450 + 9.350;
+    }
+    else if (equipment == "rope")
+    {
+        totalScore = 9.700 + 9.150;
+    }
+}
+
+
+    totalScoreNeeded = 20 - totalScore;
+    totalScoreNeeded = (totalScoreNeeded / 20) * 100;
+    Console.WriteLine($"The team of {country} get {$"{totalScore:F3}"} on {equipment}.");
+    Console.WriteLine($"{totalScoreNeeded:F2}%");

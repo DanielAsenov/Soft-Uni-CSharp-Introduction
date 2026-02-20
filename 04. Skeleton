@@ -1,0 +1,26 @@
+﻿
+
+
+int minutesRace = int.Parse(Console.ReadLine());
+int secondsRace = int.Parse(Console.ReadLine());
+double lengthRace = double.Parse(Console.ReadLine());
+double secondsPer100Metres = double.Parse(Console.ReadLine());
+
+double minutesRaceToSeconds = minutesRace * 60;
+double secondsAdedd = minutesRaceToSeconds + secondsRace;
+double lengthRaceToMetres = lengthRace / 120;
+double secondsFor100Metres = lengthRaceToMetres * 2.5;
+
+
+double totalTime = (lengthRace / 100) * secondsPer100Metres - secondsFor100Metres;
+
+if (totalTime <= secondsAdedd)
+{
+    Console.WriteLine("Marin Bangiev won an Olympic quota!");
+    Console.WriteLine($"His time is {totalTime:F3}.");
+
+}
+else
+{
+    Console.WriteLine($"No, Marin failed! He was {totalTime - secondsAdedd:F3} second slower.");
+}
