@@ -26,7 +26,7 @@ while (true)
     if (number < 0)
     {
         Console.WriteLine("Number is negative.");
-        continue; // skip this number
+        continue; 
     }
 
     if (IsPrime(number))
@@ -38,16 +38,17 @@ while (true)
 Console.WriteLine($"Sum of prime numbers: {primeSum}");
 Console.WriteLine($"Sum of non-prime numbers: {nonPrimeSum}");
 
-// Function to check if a number is prime
-static bool IsPrime(int n)
+/
+bool IsPrime(int n)
 {
     if (n <= 1) return false;
 
     for (int i = 2; i <= Math.Sqrt(n); i++)
     {
         if (n % i == 0)
-            return false; // found a divisor → not prime
+            return false; 
     }
 
-    return true; // no divisors → prime
+    return true; 
 }
+
