@@ -1,0 +1,99 @@
+﻿
+/*
+
+The Matrix
+20
+student
+standard
+kid
+kid
+student
+student
+standard
+student
+End
+The Green Mile
+17
+student
+standard
+standard
+student
+standard
+student
+End
+Amadeus
+3
+standard
+standard
+standard
+Finish
+
+
+Taxi
+10
+standard
+kid
+student
+student
+standard
+standard
+End
+Scary Movie
+6
+student
+student
+student
+student
+student
+student
+Finish
+ */
+
+string filmName = "";
+
+string ticketType = "";
+
+int ticketStudentCount = 0;
+int ticketStandardCount = 0;
+int ticketKidCount = 0;
+
+while ((filmName = Console.ReadLine()) != "Finish")
+{
+    int freeSeats = int.Parse(Console.ReadLine());
+    int ticketCount = 0;
+
+    while ((ticketType = Console.ReadLine()) != "End")
+    {
+
+        if (ticketType == "student")
+        {
+            ticketCount++;
+            ticketStudentCount++;
+        }
+        else if (ticketType == "standard")
+        {
+            ticketCount++;
+            ticketStandardCount++;
+        }
+        else if (ticketType == "kid")
+        {
+            ticketCount++;
+            ticketKidCount++;
+        }
+
+        if (ticketCount == freeSeats)
+        {
+            break;
+        }
+    }
+
+    
+    Console.WriteLine($"{filmName} - {ticketCount * 100.0 / freeSeats:F2}% full.");
+
+}
+
+int totalTicket = ticketStudentCount + ticketStandardCount + ticketKidCount;
+Console.WriteLine($"Total tickets: {totalTicket}");
+Console.WriteLine($"{ticketStudentCount * 100.0 / totalTicket:F2}% student tickets.");
+Console.WriteLine($"{ticketStandardCount * 100.0 / totalTicket:F2}% standard tickets.");
+Console.WriteLine($"{ticketKidCount * 100.0 / totalTicket:F2}% kids tickets.");
